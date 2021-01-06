@@ -1,19 +1,20 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const config = require("config")
-
-
-
+const authRouter = require("./routes/auth.routes.js")
+const app = express()
 const PORT = config.get("PORT")
 
-const app = express()
-
+app.use(express.json())
+app.use("api/auth",authRouter)
 
 const start = async () =>{
   try{
     await mongoose.connect(config.get("dbUrl"),
                            {useNewUrlParser: true,
-                           useUnifiedTopology: true})
+                            useUnifiedTopology: true,
+                            useCreateIndex: true
+                           })
     
     app.listen(PORT, ()=>{
       console.log("server started on port:  ", PORT)

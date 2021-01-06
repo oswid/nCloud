@@ -1,6 +1,6 @@
-const {Shema, ObjectId} = require("mongoose")
+const {Schema, ObjectId, model} = require("mongoose")
 
-const User = Shema ({
+const User = Schema ({
   email: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   diskSpace: {type: Number, default: 1024**3*10},
@@ -9,4 +9,4 @@ const User = Shema ({
   files: [{type: ObjectId, ref: "File"}]
 })
 
-module.exports = mongoose.model("User", User)
+module.exports = model("User", User)
