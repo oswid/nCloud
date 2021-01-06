@@ -1,10 +1,10 @@
-const express = require("express")
-const User = require("./../models/User.js")
-const router = express.Router()
+const Router = require("express")
+const User = require("./../models/User")
+const router =  new Router()
 
-
-router.post("registration",async (req, res)=>{
+router.post("/reg",async (req, res)=>{
   try{
+    console.log(req.body)
     const {email, password} = req.body
 
     const candidate = await User.findOne({email})
