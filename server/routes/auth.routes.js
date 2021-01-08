@@ -1,10 +1,10 @@
 const Router = require("express")
 const User = require("./../models/User")
 const router =  new Router()
+const bcrypt = require("bcrypt")
 
 router.post("/reg",async (req, res)=>{
   try{
-    console.log(req.body)
     const {email, password} = req.body
 
     const candidate = await User.findOne({email})
@@ -12,8 +12,8 @@ router.post("/reg",async (req, res)=>{
     if(candidate){
       return res.status(400).json({message: "this user already exist"})
     }
-
-    const user = new User({email, password})
+    const hashPassword = await bcrypt.hash(password, 5)
+    const user = new User({email, hashPassword})
     await user.save()
     return res.json({message: "user was created"})
    
