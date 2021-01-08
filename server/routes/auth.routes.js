@@ -3,6 +3,8 @@ const User = require("./../models/User")
 const router =  new Router()
 const bcrypt = require("bcryptjs")
 const {check, validationResult} = require("express-validator")
+const jwt = require("jsonwebtoken")
+const config = require("config")
 
 router.post("/reg",
             [
@@ -51,8 +53,9 @@ async (req, res)=>{
     if (!isPassValid){
       return res.status(400).json({message: "invalid password"})
     }
-    
+    const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "1h"})    
     return res.json({
+      token,
       id: user.id,
       email: email,
       diskSpace: user.diskSpace,
