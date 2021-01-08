@@ -1,2 +1,6 @@
 * Cloud 
-  1) registarion 
+** Server
+  1) registarion
+  2) login
+  
+** Client 
