@@ -2,10 +2,12 @@ const defaultState ={
   
 }
 
-export default fileReducer = (state=defaultState, action) => {
+const fileReducer = (state=defaultState, action) => {
   switch (action.type) {
 
   default:
     return state
   }
 }
+
+export default fileReducer

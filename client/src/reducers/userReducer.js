@@ -4,10 +4,12 @@ const defaultState ={
   isAuth:false
 }
 
-export default userReducer = (state=defaultState, action) => {
+const userReducer = (state=defaultState, action) => {
   switch (action.type) {
 
   default:
     return state
   }
 }
+
+export default userReducer
