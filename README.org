@@ -1,7 +1,7 @@
 * Cloud
-  dev from ws
+  dev from ws:
 ** Server
   1) registarion
   2) login
   
-** Client 
+** Client
