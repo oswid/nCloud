@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Navbar.sass"
 
 const Navbar = () => {
     return (
@@ -8,8 +9,8 @@ const Navbar = () => {
             </div>
             <div className="menu">
                 <ul>
-                    <l>Sign in </l>
-                    <l>Registration</l>
+                    <li>Sign in </li>
+                    <li>Registration</li>
                 </ul>
             </div>
         </div>

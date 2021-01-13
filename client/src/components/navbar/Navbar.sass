@@ -1,0 +1,21 @@
+.navbar
+  display: grid
+  grid-template-areas: "image . header"
+  grid-template-columns: 1fr 3fr 2fr
+  grid-template-rows: 100px
+
+.image
+  grid-area: image
+  background: red
+
+.menu
+  grid-area: header
+  background: aliceblue
+  font-size: 25px
+  ul
+    display: flex
+    justify-content: space-around
+    li
+      list-style: none
+      &:hover
+        background: yellow
