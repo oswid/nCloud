@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Navbar.sass"
 import logo from "./../../assets/img/logo.png"
+import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -10,8 +11,8 @@ const Navbar = () => {
             </div>
             <div className="menu">
                 <ul>
-                    <li>Sign in </li>
-                    <li>Registration</li>
+                    <li><NavLink to="/login">Sign in</NavLink></li>
+                    <li><NavLink to="/reg">Registration</NavLink></li>
                 </ul>
             </div>
         </div>
