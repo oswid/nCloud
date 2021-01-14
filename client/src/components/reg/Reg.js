@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Input from "../../utils/input/Input";
 import "./reg.sass"
+import {registration} from "../../actions/registration";
 
 const Reg = () => {
 
@@ -16,7 +17,7 @@ const Reg = () => {
                 <Input type="text" inputValue={email} setValue={setEmail}/>
                 <Input type="password" inputValue={password} setValue={setPassword}/>
             </div>
-            <div className="btn" onClick={null}>Отправить</div>
+            <div className="btn" onClick={()=>{registration(email, password)}}>Отправить</div>
         </div>
     );
 };
