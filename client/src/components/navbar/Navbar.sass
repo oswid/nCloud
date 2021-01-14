@@ -6,15 +6,16 @@
 
 .image
   grid-area: image
-  background: red
+  align-self: center
+  justify-self: center
 
 .menu
   grid-area: header
   background: aliceblue
   font-size: 25px
   ul
-    display: flex
-    justify-content: space-around
+    display: grid
+    grid-auto-flow: column
     li
       list-style: none
       &:hover

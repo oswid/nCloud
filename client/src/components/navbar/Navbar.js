@@ -1,11 +1,12 @@
 import React from 'react';
 import "./Navbar.sass"
+import logo from "./../../assets/img/logo.png"
 
 const Navbar = () => {
     return (
         <div className="navbar">
             <div className="image">
-                <img src="" alt=""/>
+                <img src={logo} alt=""/>
             </div>
             <div className="menu">
                 <ul>
