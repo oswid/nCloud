@@ -56,11 +56,12 @@ async (req, res)=>{
     const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "1h"})    
     return res.json({
       token,
-      id: user.id,
-      email: email,
-      diskSpace: user.diskSpace,
-      avatar: user.avatar
-    })
+        user: {
+            id: user.id,
+            email: email,
+            diskSpace: user.diskSpace,
+            avatar: user.avatar
+        }})
    
   }catch(e){
     console.log(e)
