@@ -24,6 +24,17 @@ class FileController{
             return res.status(400).json(e)
         }
     }
+
+    async fetFiles(req, res){
+        try{
+            const files = await User
+                .find({_id: req.user.id, parent:req.query.parent })
+            return res.json({files})
+        }catch (e) {
+           console.log(e)
+            return res.status(500).json({message: "Can't get a file"})
+        }
+    }
 }
 
 module.exports = new FileController()
