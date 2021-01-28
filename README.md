@@ -1,12 +1,22 @@
 
 
-* Cloud
+## Cloud
   dev from ws:
-** Server
+### Server
   1) registarion
   2) login
   3) jwt auth
-** Client
+### Client
   1)redux
   2)navbarr
   3)actions
+  
+
+
+
+
+
+
+
+  
+  
