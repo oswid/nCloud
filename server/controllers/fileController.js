@@ -29,7 +29,8 @@ class FileController{
         try{
             const files = await User
                 .find({_id: req.user.id, parent:req.query.parent })
-            return res.json({files})
+              //  console.log("from fetFiles")
+            return res.json(files)
         }catch (e) {
            console.log(e)
             return res.status(500).json({message: "Can't get a file"})
