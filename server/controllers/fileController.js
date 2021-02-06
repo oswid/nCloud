@@ -14,7 +14,7 @@ class FileController{
             }else{
                 file.path = `${parentFile.path}\\${file.name}`
                 await fileService.createDir(file)
-                parentFile.childl.push(file._id)
+                parentFile.child.push(file._id)
                 await parentFile.save()
             }
             await file.save()
