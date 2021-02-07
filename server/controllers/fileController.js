@@ -4,6 +4,7 @@ const File = require("./../models/File")
 
 class FileController{
     async createDir(req, res){
+        console.log("from createdir")
         try {
             const {name, type, parent} = req.body
             const file = new File({name, type, parent,user: req.user.id})
