@@ -1,6 +1,8 @@
 
 
 ## Cloud
+turn to hardlink
+
   
 
 
